@@ -10,6 +10,10 @@
   .services-container .container .items h2 {
     font-size: 20px;
   }
+
+  .inner-portfolio-page .banner-container .column .mockup {
+    margin-bottom: -40px;
+  }
 }
 
 @media(max-width: 1367px) {

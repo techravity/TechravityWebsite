@@ -2,13 +2,17 @@
   // WOW ANIMATION
   new WOW().init();
   // Header Background
-  $(window).scroll(function(e) {
-    if ($(this).scrollTop() > 550) {
-      $("header").addClass("sticky");
-    } else {
-      $("header").removeClass("sticky");
-    }
-  });
+  if ($(window).width() < 736) {
+    $("header").addClass("sticky");
+  } else {
+    $(window).scroll(function(e) {
+      if ($(this).scrollTop() > 550) {
+        $("header").addClass("sticky");
+      } else {
+        $("header").removeClass("sticky");
+      }
+    });
+  }
   // Project Estimator
   $(document).on("click", ".menu-container .btn", function(e) {
     e.preventDefault();
@@ -142,14 +146,15 @@
       }
     }
   });
-  // TECHNOLOGY
-  $(".technology-container .owl-carousel").owlCarousel({
-    loop: true,
+  // PROJECT SLIDER
+  $(".project-thumbnails .owl-carousel").owlCarousel({
+    loop: false,
     responsiveClass: true,
     nav: false,
     navText: ["", ""],
-    autoplay: true,
+    autoplay: false,
     autoplayTimeout: 2500,
+    autoWidth: true,
     responsive: {
       0: {
         items: 1,
@@ -160,7 +165,7 @@
         nav: false
       },
       1000: {
-        items: 6,
+        items: 1,
         nav: true,
         loop: false
       }

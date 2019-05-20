@@ -77,7 +77,16 @@
   }
 
   .banner-container {
-    height: 50vh;
+    height: auto;
+    margin-top: 90px;
+  }
+
+  .service-page .banner-container {
+    padding-bottom: 90px;
+  }
+
+  .banner-container .container {
+    width: 90%;
   }
 
   .banner-container .content {
@@ -90,6 +99,7 @@
 
   .cd-words-wrapper {
     text-align: center;
+    width: 100% !important;
   }
 
   .service-page .banner-container .content h1,
@@ -201,7 +211,9 @@
   }
 
   .projects-container .container .items .arrow-right,
-  .slider-container::after {
+  .slider-container::after,
+  .project-thumbnails::after,
+  .project-thumbnails .owl-carousel {
     display: none;
   }
 
@@ -211,8 +223,13 @@
 
   .clients-container .items,
   footer .items,
-  .projects-container .container .items:not(:last-child):hover {
+  .projects-container .container .items:not(:last-child):hover,
+  .project-thumbnails .column {
     width: auto;
+  }
+
+  .clients-container .items {
+    height: auto;
   }
 
   .clients-container .items:nth-child(2) {
@@ -360,6 +377,12 @@
     display: none;
   }
 
+  .technology-container .column:last-child {
+    justify-content: unset;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
   .inner-portfolio-page .banner-container .column,
   .technology-container .column,
   .porject-overview-container .overview-tabs .tabs,
@@ -415,7 +438,8 @@
     font-size: 18px;
   }
 
-  .main-page .contact-page .introduction-1 .content {
+  .main-page .contact-page .introduction-1 .content,
+  .contact-page .introduction-1 .content {
     height: auto;
     width: 100%;
   }

@@ -103,6 +103,8 @@ header {
   z-index: 50;
   transition: .3s ease;
   -webkit-transition: .3s ease;
+  animation: fadeInDown .3s;
+  -webkit-animation: fadeInDown .3s;
 }
 
 header.sticky {
@@ -111,6 +113,8 @@ header.sticky {
   background-color: rgba(255, 255, 255, 1);
   transition: .3s ease;
   -webkit-transition: .3s ease;
+  animation: fadeInDown .3s;
+  -webkit-animation: fadeInDown .3s;
 }
 
 header .logo-container {
@@ -2120,7 +2124,7 @@ footer .copyright .container {
 }
 
 .project-thumbnails .container {
-  height: 400px;
+  height: 100%;
   display: flex;
 }
 
@@ -2133,24 +2137,25 @@ footer .copyright .container {
   padding: 0 5% 0 0;
 }
 
-.project-thumbnails .owl-carousel {
+.project-thumbnails .gallery-container {
   position: absolute;
-  top: 8%;
   bottom: 0;
-  right: 2%;
-  width: 46%;
-  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.5);
+  right: 40px;
+  width: calc(50% - 80px);
 }
 
-
-.project-thumbnails .owl-carousel .item {
-  display: flex;
-  justify-content: flex-start;
+.project-thumbnails .owl-carousel {
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.5);
+  background-color: #fff;
 }
 
 .project-thumbnails .owl-carousel img {
   object-fit: contain;
   width: 100%;
+}
+
+.project-thumbnails .gallery-container .owl-dots {
+  display: none;
 }
 
 .project-thumbnails .owl-carousel .owl-nav button.owl-prev,

@@ -6,11 +6,12 @@
     $("header").addClass("sticky");
   } else {
     $(window).scroll(function(e) {
-      console.log("scroll");
       if ($(this).scrollTop() > 550) {
+        $("header").removeClass("fixed");
         $("header").addClass("sticky");
       } else {
         $("header").removeClass("sticky");
+        $("header").addClass("fixed");
       }
     });
   }
@@ -147,6 +148,19 @@
       }
     }
   });
+  var fixOwl = function() {
+    var stageW = $(".project-thumbnails .owl-carousel").width(),
+      stageH = $(".project-thumbnails .owl-carousel").height(),
+      containerH = $(".project-thumbnails").height(),
+      $el = $(".project-thumbnails .owl-item");
+    $el.each(function() {
+      $(this).css("width", stageW);
+    });
+    $(".project-thumbnails .gallery-container").css("height", stageH);
+    if (stageH > containerH) {
+      $(".project-thumbnails").css("height", stageH + 40);
+    }
+  };
   // PROJECT SLIDER
   $(".project-thumbnails .owl-carousel").owlCarousel({
     loop: false,
@@ -155,7 +169,6 @@
     navText: ["", ""],
     autoplay: false,
     autoplayTimeout: 2500,
-    autoWidth: true,
     responsive: {
       0: {
         items: 1,
@@ -170,7 +183,10 @@
         nav: true,
         loop: false
       }
-    }
+    },
+    onInitialized: fixOwl,
+    onRefreshed: fixOwl,
+    onResize: fixOwl
   });
   // Init ScrollMagic Controller
   if ($(".service-page").length > 0) {

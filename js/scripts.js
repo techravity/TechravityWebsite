@@ -6,6 +6,7 @@
     $("header").addClass("sticky");
   } else {
     $(window).scroll(function(e) {
+      console.log("scroll");
       if ($(this).scrollTop() > 550) {
         $("header").addClass("sticky");
       } else {

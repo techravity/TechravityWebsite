@@ -1056,7 +1056,7 @@ footer .copyright .container {
   max-width: none;
   margin: 0 auto;
   color: #888;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.5;
   margin-bottom: 40px;
 }
@@ -1099,6 +1099,10 @@ footer .copyright .container {
   overflow: hidden;
   width: 100%;
   min-height: 400px;
+}
+
+.portfolio-container .container .items:nth-child(even) {
+  flex-direction: row-reverse;
 }
 
 .portfolio-container .container .items:last-child {
@@ -1439,7 +1443,7 @@ footer .copyright .container {
 .about-page .introduction-3::after {
   content: '';
   position: absolute;
-  bottom: -10%;
+  bottom: 0;
   right: 15%;
   width: 30%;
   height: 300px;
@@ -2248,10 +2252,6 @@ f.about-page .introduction-6 .items-container .items .content ul>li {
   justify-content: space-between;
   flex-direction: column;
   width: 33.33%;
-}
-
-.porject-overview-container .overview-tabs .tabs:last-child {
-  align-items: center;
 }
 
 .porject-overview-container .overview-tabs .header {

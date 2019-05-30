@@ -63,6 +63,7 @@
     position: fixed;
     padding: 0 20px;
     z-index: 50;
+    background-color: #fff;
   }
 
   header .menu-btn {
@@ -104,6 +105,11 @@
     color: #fff;
   }
 
+  header .menu-container ul>li>a:hover::after,
+  header .menu-container ul>li.active>a::after {
+    width: 80px;
+  }
+
   .banner-container,
   .service-page .banner-container {
     height: auto;
@@ -134,7 +140,6 @@
 
   .cd-words-wrapper {
     text-align: center;
-    width: 100% !important;
   }
 
   .service-page .banner-container .content h1,
@@ -180,8 +185,15 @@
   }
 
   .services-container .container .items {
-    margin-bottom: 25px;
+    margin-bottom: 0;
     text-align: center;
+  }
+
+  .services-container .container .items a {
+    margin: 25px auto 25px auto;
+    opacity: 1;
+    transform: translate(0, 0);
+    -webkit-transform: translate(0, 0);
   }
 
   .services-container .container .items .header svg,
@@ -317,7 +329,8 @@
   .about-page .introduction-1,
   .about-page .introduction-2 .content,
   .service-page .introduction-2 .row,
-  .service-page .introduction-2 .row:nth-child(odd) {
+  .service-page .introduction-2 .row:nth-child(odd),
+  .portfolio-container .container .items:nth-child(even) {
     flex-direction: column;
   }
 
@@ -332,6 +345,7 @@
   .parnters-container .items img {
     width: auto;
     margin: 0 auto;
+    height: 50px;
   }
 
   .portfolio-container {
@@ -364,12 +378,19 @@
 
   .about-page .introduction-1 .content {
     margin-left: 0;
-    margin-top: 40px;
   }
 
   .about-page .introduction-2 .steps-container li {
     padding-right: 5px;
     font-size: 15px;
+  }
+
+  .about-page .introduction-2 .steps-container li:hover {
+    color: #b5b5b5;
+  }
+
+  .about-page .introduction-2 .steps-container li.active {
+    color: #666;
   }
 
   .about-page .introduction-2 .steps-container li::after {
@@ -411,7 +432,8 @@
   .inner-portfolio-page .banner-container .project-bg,
   .inner-portfolio-page .banner-container .column .mockup,
   .technology-container .column:first-child,
-  .technology-container .column:last-child::before {
+  .technology-container .column:last-child::before,
+  .about-page .introduction-3::after {
     display: none;
   }
 
@@ -501,7 +523,8 @@
     flex-direction: column-reverse;
     margin: 0;
     margin-bottom: 25px;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
   }
 
   .about-page .introduction-6 .items-container .items .content p {
@@ -523,7 +546,24 @@
   }
 
   .about-page .introduction-6 .items-container .items img {
-    width: 100%;
+    width: 150px;
+    max-height: 150px;
+    border-radius: 100%;
+    object-fit: cover;
+    margin: 10px auto;
+  }
+
+  .services-container .container .items p {
+    overflow: unset;
     max-height: none;
+    display: -webkit-box;
+    -webkit-line-clamp: unset;
+    -webkit-box-orient: unset;
+  }
+}
+
+@media(max-width: 556px) {
+  .cd-words-wrapper {
+    width: 100% !important;
   }
 }

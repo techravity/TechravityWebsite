@@ -61,7 +61,6 @@
   });
   // STEPS
   var aboutCarousel = $(".about-page .introduction-2 .owl-carousel").owlCarousel({
-    loop: true,
     margin: 10,
     responsiveClass: true,
     nav: false,
@@ -91,6 +90,7 @@
     aboutCarousel.trigger("to.owl.carousel", [$(this).attr("data-index") - 1, 300, true]);
   });
   aboutCarousel.on("changed.owl.carousel", function(e) {
+    console.log(e.item.index + 1);
     $(".about-page .introduction-2 h2").html($(".about-page .introduction-2 .steps-container li:nth-child(" + (e.item.index + 1) + ")").attr("data-title"));
     $(".about-page .introduction-2 .steps-container li").removeClass("active");
     $(".about-page .introduction-2 .steps-container li:nth-child(" + (e.item.index + 1) + ")").addClass("active");
@@ -107,16 +107,17 @@
     responsive: {
       0: {
         items: 1,
-        nav: true
+        nav: true,
+        autoplayTimeout: 5000
       },
       600: {
-        items: 1,
-        nav: false
+        items: 3,
+        nav: false,
+        autoplayTimeout: 5000
       },
       1000: {
-        items: 3,
-        nav: true,
-        loop: false
+        items: 4,
+        nav: true
       }
     }
   });
@@ -163,7 +164,7 @@
   };
   // PROJECT SLIDER
   $(".project-thumbnails .owl-carousel").owlCarousel({
-    loop: false,
+    loop: true,
     responsiveClass: true,
     nav: false,
     navText: ["", ""],
@@ -180,8 +181,7 @@
       },
       1000: {
         items: 1,
-        nav: true,
-        loop: false
+        nav: true
       }
     },
     onInitialized: fixOwl,
@@ -242,4 +242,85 @@
   $(document).on("click", "#freeQuote .btn", function(e) {
     e.preventDefault();
   });
+
+  var projects = [
+    {
+      id: 0,
+      title: "beliive",
+      description: "Beliive is the world's largest collaborative network that uses time as currency to enable collaboration and equal opportunities among people.",
+      picture: "../images/projects/Mockup-01.jpg",
+      url: " 1.html"
+    },
+    {
+      id: 1,
+      title: "Greenut",
+      description: "Greenut allows you to shop online at wholesale rate, anytime and anywhere with just a tap of your finger. You can search for desired products.",
+      picture: "../images/projects/Mockup-02.jpg",
+      url: "2.html"
+    },
+    {
+      id: 2,
+      title: "Finna",
+      description: "A groundbreaking, patent pending platform that will revolutionise fin tech industry with focus on bonds.",
+      picture: "../images/projects/Mockup-03.jpg",
+      url: "3.html"
+    },
+    {
+      id: 3,
+      title: "Find a player",
+      description: "Find a Player is a multi platform app designed to take the pain out of organising and finding players for sports, games & events.",
+      picture: "../images/projects/Mockup-04.jpg",
+      url: "4.html"
+    },
+    {
+      id: 4,
+      title: "MOJO",
+      description: "Mojo is a mobile platform which allows you to trade stocks directly, without bank interfering. Be a part of the new generation of investors.",
+      picture: "../images/projects/Mockup-05.jpg",
+      url: "5.html"
+    },
+    {
+      id: 5,
+      title: "SOCIETY ICON",
+      description: "We believe that you as a person will be at the center of marketing in the future. The power of a person's social media has never been as high as it is today.",
+      picture: "../images/projects/Mockup-06.jpg",
+      url: "6.html"
+    },
+    {
+      id: 6,
+      title: "GIFTLET",
+      description: "GIFTLET is an E-gifting Service for Top retailers and brands that enables their users to buy gifts for others without requiring their size or color.",
+      picture: "../images/projects/Mockup-07.jpg",
+      url: "7.html"
+    },
+    {
+      id: 7,
+      title: "Toolgram",
+      description: "A powerful tool to manage and have revenue from all your telegram channels in one place.",
+      picture: "../images/projects/Mockup-09.jpg",
+      url: "9.html"
+    }
+  ];
+
+  function randomItem() {
+    for (var i = 0; i < 3; i++) {
+      var random = Math.floor(Math.random() * 8);
+      $(".more-projects .row").append(
+        "<a href=" +
+          projects[random].url +
+          " class='items'><img src=" +
+          projects[random].picture +
+          " alt=" +
+          projects[random].title +
+          " /><div class='content'><h2>" +
+          projects[random].title +
+          "</h2><p>" +
+          projects[random].description +
+          "</p></div></a>"
+      );
+    }
+  }
+  if ($(".inner-portfolio-page").length) {
+    randomItem();
+  }
 })();

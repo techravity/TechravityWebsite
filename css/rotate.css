@@ -66,6 +66,7 @@ a {
 .cd-headline.slide .cd-words-wrapper {
   overflow: hidden;
   vertical-align: top;
+  width: auto !important;
 }
 
 .cd-headline.slide b {

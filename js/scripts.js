@@ -255,14 +255,14 @@
       id: 1,
       title: "Greenut",
       description: "Greenut allows you to shop online at wholesale rate, anytime and anywhere with just a tap of your finger. You can search for desired products.",
-      picture: "../images/projects/Mockup-02.jpg",
+      picture: "../images/projects/Mockup-03.jpg",
       url: "2.html"
     },
     {
       id: 2,
       title: "Finna",
       description: "A groundbreaking, patent pending platform that will revolutionise fin tech industry with focus on bonds.",
-      picture: "../images/projects/Mockup-03.jpg",
+      picture: "../images/projects/Mockup-02.jpg",
       url: "3.html"
     },
     {
@@ -302,23 +302,36 @@
     }
   ];
 
+  var numbers = [];
+  function uniqueNumber(maxVal) {
+    var number = Math.floor(Math.random() * maxVal + 1);
+    if (!numbers.includes(number)) {
+      numbers.push(number);
+      return number;
+    } else if (numbers.length - 1 !== maxVal) {
+      uniqueNumber(maxVal);
+    }
+  }
+
   function randomItem() {
     for (var i = 0; i < 3; i++) {
-      var random = Math.floor(Math.random() * 8);
+      uniqueNumber(6);
+    }
+    numbers.forEach(index => {
       $(".more-projects .row").append(
         "<a href=" +
-          projects[random].url +
+          projects[index].url +
           " class='items'><img src=" +
-          projects[random].picture +
+          projects[index].picture +
           " alt=" +
-          projects[random].title +
+          projects[index].title +
           " /><div class='content'><h2>" +
-          projects[random].title +
+          projects[index].title +
           "</h2><p>" +
-          projects[random].description +
+          projects[index].description +
           "</p></div></a>"
       );
-    }
+    });
   }
   if ($(".inner-portfolio-page").length) {
     randomItem();

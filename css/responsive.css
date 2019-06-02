@@ -14,6 +14,15 @@
   .inner-portfolio-page .banner-container .column .mockup {
     margin-bottom: -40px;
   }
+
+  .portfolio-container .container .items {
+    min-height: 400px;
+  }
+
+  .portfolio-container .container .items .img-holder,
+  .portfolio-container .container .items .content {
+    width: 50%;
+  }
 }
 
 @media(max-width: 1367px) {

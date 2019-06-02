@@ -297,6 +297,26 @@
 
   .slider-container .item {
     width: 100%;
+    flex-direction: column-reverse;
+    justify-content: center;
+    height: auto;
+    padding-top: 10px;
+  }
+
+  .slider-container .header-title {
+    padding: 0;
+  }
+
+  .slider-container .header-title::after {
+    left: 0;
+  }
+
+  .slider-container .owl-carousel .owl-item img {
+    margin: 0 auto;
+  }
+
+  .slider-container .owl-carousel .owl-stage {
+    padding-bottom: 5px;
   }
 
   .slider-container .title {
@@ -574,5 +594,9 @@
 @media(max-width: 556px) {
   .cd-words-wrapper {
     width: 100% !important;
+  }
+
+  .slider-container .owl-carousel .owl-item img {
+    width: auto;
   }
 }

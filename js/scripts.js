@@ -121,6 +121,31 @@
       }
     }
   });
+  // SLIDER
+  $(".slider-container .owl-carousel").owlCarousel({
+    loop: true,
+    margin: 45,
+    responsiveClass: true,
+    nav: false,
+    navText: ["", ""],
+    // autoplay: true,
+    // autoplayTimeout: 3000,
+    center: true,
+    responsive: {
+      0: {
+        items: 1.2,
+        nav: false
+      },
+      600: {
+        items: 1.2,
+        nav: false
+      },
+      1000: {
+        items: 1.45,
+        nav: false
+      }
+    }
+  });
   // CLIENTS
   $(".clients-container .owl-carousel").owlCarousel({
     loop: true,

@@ -72,7 +72,6 @@
     position: fixed;
     padding: 0 20px;
     z-index: 50;
-    background-color: #fff;
   }
 
   header .menu-btn {
@@ -94,7 +93,12 @@
   }
 
   header .menu-container.active {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    display: flex;
     opacity: 1;
+    padding-top: 15%;
     visibility: visible;
     transform: translate(0, 0);
     -webkit-transform: translate(0, 0);
@@ -102,21 +106,36 @@
     -webkit-transition: .3s ease;
   }
 
+  header .menu-container ul {
+    width: 100%;
+  }
+
   header .menu-container ul>li,
   header .menu-container ul>li.btn {
     display: block;
-    padding: 15px 20px;
+    padding: 20px;
+    margin-bottom: 20px;
   }
 
   header .menu-container ul>li>a {
     padding: 0;
     display: block;
     color: #fff;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  header .menu-container ul>li.btn>a {
+    font-size: 18px;
   }
 
   header .menu-container ul>li>a:hover::after,
   header .menu-container ul>li.active>a::after {
     width: 80px;
+  }
+
+  header .menu-container ul>li>a::after {
+    display: none;
   }
 
   .banner-container,
@@ -179,7 +198,6 @@
   .introduction-2 .row,
   .introduction-2 .row:nth-child(odd),
   .clients-container .items-container,
-  .portfolio-container .container .items,
   .slider-container,
   footer .container {
     flex-direction: column;
@@ -205,6 +223,14 @@
     -webkit-transform: translate(0, 0);
   }
 
+  .portfolio-container .container .items,
+  .portfolio-container .container .items:nth-child(even) {
+    min-height: auto;
+    background-color: transparent;
+    flex-direction: column-reverse;
+    margin-bottom: 25px;
+  }
+
   .services-container .container .items .header svg,
   .portfolio-container .container .items .content {
     margin-right: 0;
@@ -212,6 +238,10 @@
 
   .portfolio-container .container .items .content {
     width: 100%;
+  }
+
+  .portfolio-container .container .items .content:first-child {
+    padding: 20px 0;
   }
 
   .projects-container .container {
@@ -358,8 +388,7 @@
   .about-page .introduction-1,
   .about-page .introduction-2 .content,
   .service-page .introduction-2 .row,
-  .service-page .introduction-2 .row:nth-child(odd),
-  .portfolio-container .container .items:nth-child(even) {
+  .service-page .introduction-2 .row:nth-child(odd) {
     flex-direction: column;
   }
 
@@ -381,16 +410,38 @@
     padding: 100px 0;
   }
 
-  .portfolio-container .container .items img {
+  .portfolio-container .container .items img,
+  .portfolio-container .container .items:nth-child(2) img,
+  .portfolio-container .container .items:nth-child(4) img,
+  .portfolio-container .container .items:nth-child(6) img,
+  .portfolio-container .container .items:nth-child(8) img {
+    position: relative;
+    bottom: 0;
+    left: auto;
+    right: auto;
+    width: 100% !important;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .portfolio-container .container .items:nth-child(2) .img-holder,
+  .portfolio-container .container .items:nth-child(4) .img-holder,
+  .portfolio-container .container .items:nth-child(6) .img-holder,
+  .portfolio-container .container .items:nth-child(8) .img-holder {
+    padding: 30px;
+    padding-bottom: 0;
+  }
+
+  .portfolio-container .container .items:nth-child(2) img:first-child,
+  .portfolio-container .container .items:nth-child(4) img:first-child,
+  .portfolio-container .container .items:nth-child(6) img:first-child,
+  .portfolio-container .container .items:nth-child(8) img:first-child {
     display: none;
   }
 
-  .portfolio-container .container .items img,
-  .portfolio-container .container .items:nth-child(3) img {
+  .portfolio-container .container .items .img-holder {
     width: 100%;
-    margin-top: 25px;
-    height: auto;
-    object-fit: contain;
+    background-color: #e2e2e2;
   }
 
   .contact-page .introduction-1 {
@@ -443,9 +494,7 @@
   }
 
   .portfolio-container .container .items a {
-    opacity: 1;
-    transform: translate(0, 0);
-    -webkit-transform: translate(0, 0);
+    display: none;
   }
 
   .inner-portfolio-page .banner-container .container,

@@ -22,8 +22,13 @@
   });
   // Expand or Collapse Menu
   $(document).on("click", ".menu-btn", function(e) {
-    $(this).toggleClass("active");
     $(".menu-container").toggleClass("active");
+    $(".close-menu-btn").addClass("show");
+  });
+  $(document).on("click", ".close-menu-btn", function(e) {
+    $(this).removeClass("show");
+    $(".menu-container").toggleClass("active");
+    $(".menu-btn").addClass("show");
   });
   // Banner Text Animation
   if ($("#typedHeader").length) {
@@ -128,8 +133,8 @@
     responsiveClass: true,
     nav: false,
     navText: ["", ""],
-    // autoplay: true,
-    // autoplayTimeout: 3000,
+    autoplay: true,
+    autoplayTimeout: 5000,
     center: true,
     responsive: {
       0: {
@@ -141,7 +146,7 @@
         nav: false
       },
       1000: {
-        items: 1.45,
+        items: 1.8,
         nav: false
       }
     }
@@ -161,7 +166,7 @@
     responsive: {
       0: {
         items: 1,
-        nav: true
+        nav: false
       },
       600: {
         items: 1,
@@ -169,8 +174,7 @@
       },
       1000: {
         items: 3,
-        nav: true,
-        loop: false
+        nav: false
       }
     }
   });

@@ -68,6 +68,10 @@
 }
 
 @media(max-width: 768px) {
+  .container {
+    width: 90%;
+  }
+
   header {
     position: fixed;
     padding: 0 20px;
@@ -141,7 +145,13 @@
   .banner-container,
   .service-page .banner-container {
     height: auto;
-    margin-top: 90px;
+    margin-top: 40px;
+  }
+
+  .banner-container .content h1,
+  .banner-container .content h2,
+  .banner-container .content h4 {
+    color: #707070;
   }
 
   .portfolio-page .banner-container,
@@ -151,7 +161,7 @@
   }
 
   .service-page .banner-container {
-    padding-bottom: 90px;
+    padding-bottom: 40px;
   }
 
   .banner-container .container {
@@ -163,6 +173,10 @@
   }
 
   .banner-container .content h1 {
+    font-size: 2.4em;
+  }
+
+  .about-page .banner-container .content h1 {
     font-size: 2.4em;
   }
 
@@ -203,6 +217,10 @@
     flex-direction: column;
   }
 
+  .services-container .container .items .header svg {
+    height: 80px;
+  }
+
   .parnters-container .container .content {
     padding: 20px 0;
   }
@@ -211,13 +229,25 @@
     margin: 50px auto;
   }
 
+  .service-page .introduction-2 .row h2 {
+    color: #707070;
+  }
+
+  .service-page .introduction-2 .row h2::after {
+    background-color: var(--main-theme-color);
+  }
+
   .services-container .container .items {
     margin-bottom: 0;
     text-align: center;
   }
 
   .services-container .container .items a {
+    color: var(--main-theme-color);
+    background-color: #eee;
     margin: 25px auto 25px auto;
+    width: auto;
+    padding: 10px 40px;
     opacity: 1;
     transform: translate(0, 0);
     -webkit-transform: translate(0, 0);
@@ -293,6 +323,15 @@
     width: 100%;
     align-items: center;
     justify-content: center;
+    background-color: var(--main-theme-color);
+  }
+
+  .projects-container .container .items:last-child h2 {
+    font-size: 1.4em;
+  }
+
+  .projects-container .container .items:last-child h2 br {
+    display: none;
   }
 
   .projects-container .container .items p {
@@ -304,6 +343,16 @@
   .project-thumbnails::after,
   .project-thumbnails .owl-carousel {
     display: none;
+  }
+
+  .clients-container .title {
+    text-align: left;
+  }
+
+  .clients-container .title::after {
+    left: 0;
+    transform: translate(0);
+    -webkit-transform: translate(0);
   }
 
   .clients-container .description {
@@ -325,11 +374,32 @@
     margin: 15px 0;
   }
 
+  .clients-container .owl-dots {
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    -webkit-transform: translate(-50%, 0);
+  }
+
+  .clients-container .owl-carousel button.owl-dot {
+    background-color: #c3c3c3;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+
+  .clients-container .owl-carousel button.owl-dot.active {
+    background-color: var(--main-theme-color)
+  }
+
   .slider-container .item {
     width: 100%;
     flex-direction: column-reverse;
     justify-content: center;
     height: auto;
+    padding: 30px;
     padding-top: 10px;
   }
 
@@ -343,6 +413,7 @@
 
   .slider-container .owl-carousel .owl-item img {
     margin: 0 auto;
+    height: 205px;
   }
 
   .slider-container .owl-carousel .owl-stage {
@@ -386,10 +457,17 @@
   .parnters-container .container,
   .contact-page .introduction-1 .row,
   .about-page .introduction-1,
-  .about-page .introduction-2 .content,
+  .about-page .introduction-2 .content {
+    flex-direction: column;
+  }
+
   .service-page .introduction-2 .row,
   .service-page .introduction-2 .row:nth-child(odd) {
-    flex-direction: column;
+    flex-direction: column-reverse;
+  }
+
+  .service-page .introduction-2 .row:nth-child(even) {
+    background-color: transparent;
   }
 
   .parnters-container .container h2 {
@@ -458,6 +536,20 @@
 
   .about-page .introduction-1 .content {
     margin-left: 0;
+    padding: 20px 0;
+  }
+
+  .about-page .introduction-2 .content .item-container {
+    margin-right: 0;
+    width: 100%;
+  }
+
+  .about-page .introduction-2 .content .item-container .item img {
+    height: 25px;
+  }
+
+  .about-page .introduction-2 .content .item-container .item h4 {
+    font-size: 16px;
   }
 
   .about-page .introduction-2 .steps-container li {
@@ -479,6 +571,18 @@
 
   .about-page .introduction-2 .content p {
     max-width: none;
+  }
+
+  .about-page .introduction-3 p {
+    padding: 20px 0;
+  }
+
+  .about-page .introduction-3 h2 {
+    margin-top: 0 !important;
+  }
+
+  .about-page .introduction-6 {
+    margin: 0;
   }
 
   .about-page .introduction-4 .content .icon-container {
@@ -582,8 +686,28 @@
     width: 100%;
   }
 
-  .main-page .contact-page .introduction-1 .row:last-child .content {
+  .contact-page .introduction-1 .row {
+    margin-top: 10px;
+  }
+
+  .main-page .contact-page .introduction-1 .row .content:last-child {
     margin-top: 30px;
+  }
+
+  .contact-page .introduction-1 .items ul>li {
+    width: 25px;
+    height: 25px;
+  }
+
+  .contact-page .introduction-1 .items ul>li>a {
+    width: 25px;
+    height: 25px;
+    background-size: 25px;
+    opacity: 0.4;
+  }
+
+  .contact-page .introduction-1 .row .btn {
+    width: 100%;
   }
 
   .about-page .introduction-4 .content .icon-container img {

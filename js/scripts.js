@@ -111,8 +111,9 @@
     autoplayTimeout: 3000,
     responsive: {
       0: {
-        items: 1,
+        items: 2,
         nav: true,
+        margin: 20,
         autoplayTimeout: 5000
       },
       600: {
@@ -139,7 +140,8 @@
     responsive: {
       0: {
         items: 1.2,
-        nav: false
+        nav: false,
+        margin: 35
       },
       600: {
         items: 1.2,
@@ -156,25 +158,24 @@
     loop: true,
     margin: 10,
     responsiveClass: true,
-    nav: false,
+    nav: true,
     navText: ["", ""],
-    autoplay: true,
-    autoplayTimeout: 3000,
-    dots: true,
+    dots: false,
     stagePadding: 20,
     margin: 40,
     responsive: {
       0: {
         items: 1,
-        nav: false
+        nav: false,
+        stagePadding: 10,
+        dots: true
       },
       600: {
         items: 1,
         nav: false
       },
       1000: {
-        items: 3,
-        nav: false
+        items: 3
       }
     }
   });

@@ -448,6 +448,7 @@
 
   .service-page .introduction-2 .row svg {
     width: 100%;
+    opacity: 1;
   }
 
   .parnters-container {
@@ -485,7 +486,7 @@
   }
 
   .portfolio-container {
-    padding: 100px 0;
+    padding: 50px 0 25px 0;
   }
 
   .portfolio-container .container .items img,
@@ -761,6 +762,10 @@
     display: -webkit-box;
     -webkit-line-clamp: unset;
     -webkit-box-orient: unset;
+  }
+
+  footer .container {
+    padding-bottom: 15px;
   }
 }
 

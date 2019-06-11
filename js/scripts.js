@@ -181,16 +181,19 @@
   });
   var fixOwl = function() {
     var stageW = $(".project-thumbnails .owl-carousel").width(),
-      stageH = $(".project-thumbnails .owl-carousel").height(),
       containerH = $(".project-thumbnails").height(),
       $el = $(".project-thumbnails .owl-item");
     $el.each(function() {
       $(this).css("width", stageW);
     });
-    $(".project-thumbnails .gallery-container").css("height", stageH);
-    if (stageH > containerH) {
-      $(".project-thumbnails").css("height", stageH + 40);
-    }
+    setTimeout(function() {
+      var stageH = $(".project-thumbnails .owl-carousel").height();
+      $(".project-thumbnails .gallery-container").css("height", stageH);
+      console.log(stageH, containerH);
+      if (stageH > containerH) {
+        $(".project-thumbnails").css("height", stageH + 40);
+      }
+    }, 500);
   };
   // PROJECT SLIDER
   $(".project-thumbnails .owl-carousel").owlCarousel({
@@ -215,11 +218,10 @@
       }
     },
     onInitialized: fixOwl,
-    onRefreshed: fixOwl,
     onResize: fixOwl
   });
   // Init ScrollMagic Controller
-  if ($(".service-page").length > 0) {
+  if ($(".service-page").length > 0 && $(window).width > 768) {
     var controller = new ScrollMagic.Controller();
     $(".row").each(function() {
       new ScrollMagic.Scene({ triggerElement: this, duration: 1000, reverse: true })

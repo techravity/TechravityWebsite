@@ -76,6 +76,7 @@
     position: fixed;
     padding: 0 20px;
     z-index: 50;
+    background-color: #fff;
   }
 
   header .menu-btn {
@@ -340,8 +341,7 @@
 
   .projects-container .container .items .arrow-right,
   .slider-container::after,
-  .project-thumbnails::after,
-  .project-thumbnails .owl-carousel {
+  .project-thumbnails::after {
     display: none;
   }
 
@@ -598,10 +598,6 @@
     display: none;
   }
 
-  .portfolio-container .container .items a {
-    display: none;
-  }
-
   .inner-portfolio-page .banner-container .container,
   .porject-overview-container .overview-tabs .row,
   .more-projects .row {
@@ -624,6 +620,29 @@
     justify-content: unset;
     overflow-x: auto;
     overflow-y: hidden;
+    padding-left: 20px;
+  }
+
+  .porject-overview-container {
+    padding-top: 20px;
+  }
+
+  .project-thumbnails {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column-reverse;
+  }
+
+  .project-thumbnails .gallery-container {
+    position: relative;
+    width: 100%;
+    right: 0;
+    margin-bottom: 35px;
+  }
+
+  .project-thumbnails .owl-carousel {
+    box-shadow: none;
   }
 
   .inner-portfolio-page .banner-container .column,
@@ -638,7 +657,34 @@
   }
 
   .porject-overview-container .overview-tabs .tabs {
-    margin-bottom: 35px;
+    margin-bottom: 25px;
+  }
+
+  .project-thumbnails .gallery-container .owl-dots {
+    display: block;
+    background-color: #484848;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .project-thumbnails .gallery-container .owl-carousel button.owl-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #999;
+    margin: 0 5px;
+  }
+
+  .project-thumbnails .gallery-container .owl-carousel button.owl-dot.active {
+    background-color: var(--main-theme-color);
+  }
+
+  .project-thumbnails .column:first-child {
+    width: 100%;
+  }
+
+  .project-thumbnails .column h2 {
+    color: #777;
   }
 
   .porject-overview-container .overview-tabs .tabs:last-child {

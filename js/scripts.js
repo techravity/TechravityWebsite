@@ -30,17 +30,6 @@
     $(".menu-container").toggleClass("active");
     $(".menu-btn").addClass("show");
   });
-  // Banner Text Animation
-  if ($("#typedHeader").length) {
-    var typed = new Typed("#typedHeader", {
-      stringsElement: "#typed-header",
-      smartBackspace: true,
-      showCursor: false,
-      typeSpeed: 50,
-      backDelay: 700,
-      loop: true
-    });
-  }
   // Thumbnails
   $(".project-thumbnails.owl-carousel").owlCarousel({
     loop: true,
@@ -51,7 +40,7 @@
     responsive: {
       0: {
         items: 1,
-        nav: true
+        nav: false
       },
       600: {
         items: 1,
@@ -206,7 +195,8 @@
     responsive: {
       0: {
         items: 1,
-        nav: true
+        nav: false,
+        dots: true
       },
       600: {
         items: 1,
@@ -221,7 +211,7 @@
     onResize: fixOwl
   });
   // Init ScrollMagic Controller
-  if ($(".service-page").length > 0 && $(window).width > 768) {
+  if ($(".service-page").length > 0 && $(window).width() > 768) {
     var controller = new ScrollMagic.Controller();
     $(".row").each(function() {
       new ScrollMagic.Scene({ triggerElement: this, duration: 1000, reverse: true })

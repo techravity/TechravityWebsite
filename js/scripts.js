@@ -79,13 +79,10 @@
   aboutCarousel.owlCarousel();
   $(document).on("click", ".about-page .introduction-2 .steps-container li", function() {
     $(".about-page .introduction-2 .steps-container li").removeClass("active");
-    $(".about-page .introduction-2 h2").html($(this).attr("data-title"));
     $(this).addClass("active");
     aboutCarousel.trigger("to.owl.carousel", [$(this).attr("data-index") - 1, 300, true]);
   });
   aboutCarousel.on("changed.owl.carousel", function(e) {
-    console.log(e.item.index + 1);
-    $(".about-page .introduction-2 h2").html($(".about-page .introduction-2 .steps-container li:nth-child(" + (e.item.index + 1) + ")").attr("data-title"));
     $(".about-page .introduction-2 .steps-container li").removeClass("active");
     $(".about-page .introduction-2 .steps-container li:nth-child(" + (e.item.index + 1) + ")").addClass("active");
   });
@@ -98,6 +95,7 @@
     navText: ["", ""],
     autoplay: true,
     autoplayTimeout: 3000,
+    autoplayHoverPause: true,
     responsive: {
       0: {
         items: 2,
@@ -124,8 +122,9 @@
     nav: false,
     navText: ["", ""],
     autoplay: true,
-    autoplayTimeout: 5000,
+    autoplayTimeout: 7000,
     center: true,
+    autoplayHoverPause: true,
     responsive: {
       0: {
         items: 1.2,
@@ -283,7 +282,7 @@
     {
       id: 2,
       title: "Finna",
-      description: "A groundbreaking, patent pending platform that will revolutionise fin tech industry with focus on bonds.",
+      description: "A groundbreaking, patent pending platform that will revolutionise Fintech industry with focus on bonds.",
       picture: "../images/projects/Mockup-02.jpg",
       url: "3.html"
     },

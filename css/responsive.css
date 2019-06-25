@@ -23,6 +23,36 @@
   .portfolio-container .container .items .content {
     width: 50%;
   }
+
+  .about-page .introduction-6 .items-container .items img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .about-page .introduction-6 .items-container .items.sm .content h2 {
+    font-size: 2em;
+  }
+
+  .about-page .introduction-6 .items-container .items.sm .content p {
+    font-size: 1em;
+  }
+
+  .about-page .introduction-3 p {
+    font-size: 20px;
+  }
+
+  .about-page .introduction-2 .steps-container li {
+    font-size: 18px;
+  }
+
+  .about-page .introduction-2 .content p {
+    font-size: 16px;
+  }
+
+  .about-page .introduction-1 p,
+  .contact-page .introduction-1 p {
+    font-size: 18px;
+  }
 }
 
 @media(max-width: 1367px) {

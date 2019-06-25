@@ -177,7 +177,6 @@
     setTimeout(function() {
       var stageH = $(".project-thumbnails .owl-carousel").height();
       $(".project-thumbnails .gallery-container").css("height", stageH);
-      console.log(stageH, containerH);
       if (stageH > containerH) {
         $(".project-thumbnails").css("height", stageH + 40);
       }

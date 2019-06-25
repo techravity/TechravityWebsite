@@ -1728,29 +1728,15 @@ footer .copyright .container {
 .about-page .introduction-6 .items-container {
   position: relative;
   margin-top: -30px;
-}
-
-.about-page .introduction-6 .items-container .row {
   display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  margin-bottom: 25px;
-}
-
-.about-page .introduction-6 .items-container .row:first-child,
-.about-page .introduction-6 .items-container .row:nth-child(2) {
-  margin-bottom: 50px;
-}
-
-.about-page .introduction-6 .items-container .row:last-child {
-  margin-bottom: 0;
+  flex-wrap: wrap;
 }
 
 .about-page .introduction-6 .items-container .items {
   position: relative;
   background-color: #fff;
-  margin: 0 25px;
-  flex: 0 1 calc(50% - 25px);
+  width: calc(33.33% - 20px);
+  margin: 10px;
   box-shadow: 0px 10px 10px 0 rgba(0, 0, 0, 0.2);
   display: inline-flex;
   align-items: center;
@@ -1761,25 +1747,17 @@ footer .copyright .container {
   -webkit-transition: .3s ease;
 }
 
-.about-page .introduction-6 .items-container .row .items:first-child {
-  margin-left: 0;
-}
-
-.about-page .introduction-6 .items-container .row .items:last-child {
-  margin-right: 0;
-}
-
-.about-page .introduction-6 .items-container .items.sm {
-  flex: 0 1 calc(33.33% - 15px);
-  margin: 0 15px;
-}
-
 .about-page .introduction-6 .items-container .items:hover {
   transform: translate(0, -4px);
   -webkit-transform: translate(0, -4px);
   box-shadow: 0px 10px 10px 0 rgba(0, 0, 0, 0.3);
   transition: .3s ease;
   -webkit-transition: .3s ease;
+}
+
+.about-page .introduction-6 .items-container .items.hide {
+  background-color: transparent;
+  box-shadow: none;
 }
 
 .about-page .introduction-6 .items-container .items .content {
@@ -2107,7 +2085,7 @@ f.about-page .introduction-6 .items-container .items .content ul>li {
   position: fixed;
   top: 0;
   right: 0;
-  left: 0;
+  bottom: 0;
   z-index: 50;
   padding: 5% 0 20px 0;
   box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.15);
@@ -2116,8 +2094,8 @@ f.about-page .introduction-6 .items-container .items .content ul>li {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  transform: translate(0, -100%);
-  -webkit-transform: translate(0, -100%);
+  transform: translate(100%, 0);
+  -webkit-transform: translate(100%, 0);
   transition: .3s ease;
   -webkit-transition: .3s ease;
 }
@@ -2153,6 +2131,11 @@ f.about-page .introduction-6 .items-container .items .content ul>li {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
+}
+
+#freeQuote .row:last-child {
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 #freeQuote .row .form-group {
@@ -2211,6 +2194,7 @@ f.about-page .introduction-6 .items-container .items .content ul>li {
 
 #freeQuote ul {
   list-style: none;
+  padding-left: 15px;
 }
 
 #freeQuote ul li {
